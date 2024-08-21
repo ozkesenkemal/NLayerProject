@@ -4,6 +4,6 @@ namespace NLayer.Data.Repository
 {
     public interface ICategoryRepository : IGenericRepository<Category>
     {
-        Task<Category> GetSingleCategoryByIdWithProductAsync(int category);
+        Task<Category> GetSingleCategoryByIdWithProductAsync(int categoryId);
     }
 }
