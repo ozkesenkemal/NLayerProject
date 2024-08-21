@@ -12,6 +12,7 @@ namespace NLayer.Repository.Repository
 
         public async Task<List<Product>> GetProductsWithCategory()
         {
+            // Eager Loading
             return await _appDbContext.Product.Include(x => x.Category).ToListAsync();
         }
     }
