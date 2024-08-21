@@ -19,8 +19,4 @@
     <ProjectReference Include="..\NLayer.Data\NLayer.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repository\" />
-  </ItemGroup>
-
 </Project>
