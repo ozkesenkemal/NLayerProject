@@ -4,9 +4,9 @@ using NLayer.Data.Entity;
 
 namespace NLayer.Service.AutoMapper
 {
-    public class AutoMapper : Profile
+    public class AutoMapperProfile : Profile
     {
-        public AutoMapper()
+        public AutoMapperProfile()
         {
             CreateMap<Product, ProductDto>().ReverseMap();
             CreateMap<Category, CategoryDto>().ReverseMap();
