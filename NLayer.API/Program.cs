@@ -19,6 +19,7 @@ builder.Services.AddControllers(configure: x=>
 {
     x.Filters.Add(new ValidateFilterAttribute());
 }).AddFluentValidation(x=> x.RegisterValidatorsFromAssemblyContaining<ProductDtoValidator>());
+
 builder.Services.Configure<ApiBehaviorOptions>(x =>
 {
     x.SuppressModelStateInvalidFilter = true;
@@ -28,6 +29,7 @@ builder.Services.Configure<ApiBehaviorOptions>(x =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped(typeof(NotFoundFilter<>))
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 builder.Services.AddDbContext<AppDbContext>(x =>
