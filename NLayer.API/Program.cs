@@ -1,17 +1,23 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NLayer.API.Filter;
 using NLayer.API.Modules;
 using NLayer.Repository;
 using NLayer.Service.AutoMapper;
+using NLayer.Service.Validation;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(configure: x=>
+{
+    x.Filters.Add(new ValidateFilterAttribute());
+}).AddFluentValidation(x=> x.RegisterValidatorsFromAssemblyContaining<ProductDtoValidator>());
 builder.Services.Configure<ApiBehaviorOptions>(x =>
 {
     x.SuppressModelStateInvalidFilter = true;
