@@ -13,7 +13,7 @@ namespace NLayer.Data.Service
         Task<CustomResponseDto<NoContentDto>> UpdateAsync(TDto dto);
         Task<CustomResponseDto<NoContentDto>> DeleteAsync(int id);
         Task<CustomResponseDto<NoContentDto>> DeleteRangeAsync(IEnumerable<int> idList);
-        Task<CustomResponseDto<IQueryable<TDto>>> Where(Expression<Func<TDto, bool>> expression);
-        Task<CustomResponseDto<bool>> AnyAsync(Expression<Func<TDto, bool>> expression);
+        Task<CustomResponseDto<IQueryable<TDto>>> Where(Expression<Func<TEntity, bool>> expression);
+        Task<CustomResponseDto<bool>> AnyAsync(Expression<Func<TEntity, bool>> expression);
     }
 }
