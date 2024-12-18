@@ -1,4 +1,5 @@
-﻿using NLayer.Data.Entity;
+﻿using NLayer.Data.Dto;
+using NLayer.Data.Entity;
 
 namespace NLayer.Data.Repository
 {
